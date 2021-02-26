@@ -5,7 +5,7 @@ using UnityEngine;
 public class CloudController : MonoBehaviour
 {
     private float minimum = 1.0f;
-    private float magSpeed = 10.0f;
+    private float magSpeed = 1.0f;
     private float magnification = 0.07f;
 
 
