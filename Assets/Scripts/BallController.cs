@@ -8,7 +8,7 @@ public class BallController : MonoBehaviour
     private float visiblePosZ = -6.5f;
     private GameObject gameoverText;
 
-    //課題変更点
+    //課題追加
     private int score = 0;
     private GameObject scoreText;
 
@@ -16,7 +16,7 @@ public class BallController : MonoBehaviour
     {
         this.gameoverText = GameObject.Find("GameOverText");
 
-        //課題変更点
+        //課題追加
         this.scoreText = GameObject.Find("ScoreText");
     }
 
@@ -28,18 +28,18 @@ public class BallController : MonoBehaviour
         }
     }
 
-    //課題変更点
-    void OnCollisionEnter(Collision collision)
+    //課題追加
+    void OnCollisionEnter(Collision other)
     {
-        if(tag == "SmallStarTag")
+        if(other.gameObject.tag == "SmallStarTag")
         {
             this.score += 10;
         }
-        else if(tag == "LargeStarTag")
+        else if(other.gameObject.tag == "LargeStarTag")
         {
             this.score += 20;
         }
-        else if(tag == "LargeCloudTag" || tag == "SmallCloudTag")
+        else if(other.gameObject.tag == "LargeCloudTag" || tag == "SmallCloudTag")
         {
             this.score += 30;
         }
